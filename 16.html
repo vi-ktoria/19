@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книжный трекер - Отслеживание прочитанного</title>
+    <link rel="stylesheet" href="css/16style.css">
+    <script src="js/16script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Книжный трекер</h1>
+            <p>Отслеживайте свои книги и делитесь впечатлениями</p>
+        </div>
+    </header>
+
+    <main class="main container">
+        <section class="intro-section">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2>Добро пожаловать в ваш личный книжный трекер!</h2>
+                    <p>Здесь вы можете вести учет прочитанных книг, ставить оценки и отслеживать свой прогресс в чтении.</p>
+                    <ul class="features-list">
+                        <li>Добавляйте книги в свою коллекцию</li>
+                        <li>Ставьте оценки от 1 до 5 звезд</li>
+                        <li>Отмечайте прочитанные книги</li>
+                        <li>Смотрите статистику чтения</li>
+                        <li>Фильтруйте книги по статусу</li>
+                        <li>Сортируйте по рейтингу</li>
+                    </ul>
+                </div>
+                <div class="intro-image">
+                    <img src="assets/images/1.png" 
+                         alt="Книжная полка с книгами" 
+                         class="book-image">
+                    <p class="image-caption">Чтение — это путешествие в мир знаний</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <h3>Всего книг</h3>
+                <p id="totalBooks">5</p>
+            </div>
+            <div class="stat-card">
+                <h3>Прочитано</h3>
+                <p id="readBooks">3</p>
+            </div>
+            <div class="stat-card">
+                <h3>Средний рейтинг</h3>
+                <p id="avgRating">4.2</p>
+            </div>
+        </section>
+
+        <section class="controls">
+            <button id="themeToggle" class="btn">Сменить тему</button>
+            <button id="sortBtn" class="btn">Сортировать по рейтингу</button>
+            <button id="filterBtn" class="btn">Фильтр: Прочитанные</button>
+        </section>
+
+        <section class="book-list">
+            <h2>Мои книги</h2>
+            <div id="booksContainer" class="books-grid">
+            </div>
+        </section>
+
+        <section class="table-section">
+            <h2>Статистика чтения (последние 8 книг)</h2>
+            <div class="table-wrapper">
+                <table id="readingTable">
+                    <thead>
+                        <tr>
+                            <th>Книга</th>
+                            <th>Автор</th>
+                            <th>Жанр</th>
+                            <th>Страниц</th>
+                            <th>Рейтинг</th>
+                            <th>Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-controls">
+                <button id="highlightBtn" class="btn">Подсветить топовые</button>
+            </div>
+        </section>
+
+        <section class="add-section">
+            <h3>Добавить новую книгу</h3>
+            <div class="form">
+                <input type="text" id="bookTitle" placeholder="Название книги" class="input">
+                <input type="text" id="bookAuthor" placeholder="Автор" class="input">
+                <select id="bookGenre" class="input">
+                    <option value="Фантастика">Фантастика</option>
+                    <option value="Детектив">Детектив</option>
+                    <option value="Роман">Роман</option>
+                    <option value="Научная">Научная</option>
+                    <option value="Биография">Биография</option>
+                </select>
+                <input type="number" id="bookPages" placeholder="Страниц" class="input" min="1" max="2000">
+                <div class="rating">
+                    <span>Рейтинг: </span>
+                    <div class="stars" id="ratingStars">
+                        <span data-rating="1">☆</span>
+                        <span data-rating="2">☆</span>
+                        <span data-rating="3">☆</span>
+                        <span data-rating="4">☆</span>
+                        <span data-rating="5">☆</span>
+                    </div>
+                </div>
+                <button id="submitBook" class="btn">Добавить книгу</button>
+                <p id="errorMsg" class="error"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Книжный трекер © 2025</p>
+            <p>Всего книг в трекере: <span id="footerTotal">5</span> | Прочитано: <span id="footerRead">3</span></p>
+            <p class="footer-tip">Совет: Читайте каждый день - это развивает мышление и словарный запас!</p>
+        </div>
+    </footer>
+</body>
+</html>
